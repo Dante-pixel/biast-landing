@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-key="title">Кровельные сэндвич‑панели | БИАСТ</title>
+  <meta name="description" content="Купить кровельные сэндвич‑панели с утеплителем от БИАСТ. Онлайн-заявка, доставка по Кыргызстану.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange: #f57c00;
+      --deepblue: #0b1f40;
+      --lightbg: #f7faff;
+      --cardbg: #fffdfa;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(120deg, #f7faff 80%, #e6f2ff 100%);
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+    header {
+      background: linear-gradient(to right, var(--deepblue) 55%, var(--orange) 100%);
+      color: white;
+      text-align: center;
+      padding: 46px 18px 8px 18px;
+      box-shadow: 0 8px 24px rgba(11,31,64,0.13);
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+      margin-bottom: 0px;
+      position: relative;
+      z-index: 1;
+    }
+    .lang-switch {
+      display: flex; gap: 7px;
+      justify-content: flex-end;
+      margin: 10px 30px 0 0;
+    }
+    .lang-switch button {
+      padding: 7px 17px;
+      border-radius: 9px;
+      border: none;
+      background: #e4e6ee;
+      color: #0b1f40;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.16s;
+    }
+    .lang-switch button.active,
+    .lang-switch button:hover { background: #f57c00; color: white;}
+    h1 { font-size: 32px; font-weight: 800; letter-spacing: 0.03em; }
+    section {
+      padding: 40px 12px 24px 12px;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 42px auto;
+      background: #fff;
+      border-radius: 40px;
+      margin-top: 32px;
+      box-shadow: 0 8px 36px rgba(11,31,64,0.10);
+      border-top: 6px solid var(--orange);
+
+      /* АНИМАЦИЯ */
+      opacity: 0;
+      transform: translateY(32px);
+      animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+    }
+    @keyframes fadeInUp {
+      100% { opacity: 1; transform: none;}
+    }
+    .product-img {
+      width: 90%;
+      max-width: 370px;
+      margin: 0 auto 18px auto;
+      border-radius: 22px;
+      box-shadow: 0 2px 19px #f57c0040;
+      border: 2.5px solid #e4e6ee;
+      display: block;
+      background: #fffdfa;
+    }
+    h2 { color: var(--deepblue); font-size: 28px; margin: 15px 0 23px 0; }
+    .features {
+      text-align: left;
+      margin: 0 auto 35px auto;
+      padding: 0 10px;
+      max-width: 610px;
+      font-size: 17px;
+    }
+    .features ul {
+      list-style: disc;
+      margin: 0 0 0 28px;
+    }
+    .form-box {
+      background: #f7f7fb;
+      border-radius: 17px;
+      padding: 20px 17px 13px 17px;
+      margin: 0 auto;
+      max-width: 430px;
+      box-shadow: 0 2px 12px rgba(11,31,64,0.04);
+      border-top: 3px solid #f57c00;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+    .form-box h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #111;
+    }
+    .form-box input, .form-box textarea, .form-box select {
+      width: 100%;
+      padding: 12px 11px;
+      margin: 8px 0;
+      border: 1.4px solid #d8dadf;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      background: #fff;
+      transition: border-color 0.2s;
+    }
+    .form-box input:focus,
+    .form-box textarea:focus,
+    .form-box select:focus {
+      outline: none;
+      border-color: #f57c00;
+      box-shadow: 0 0 6px #f57c0035;
+    }
+    .form-box textarea { min-height: 60px; resize: vertical; }
+    .btn {
+      background: var(--orange);
+      color: white;
+      padding: 13px 34px;
+      border: none;
+      border-radius: 9px;
+      cursor: pointer;
+      margin: 13px 0 5px 0;
+      font-weight: bold;
+      font-size: 18px;
+      box-shadow: 0 3px 15px rgba(245,124,0,0.09);
+      transition: background 0.18s, box-shadow 0.22s, transform 0.16s;
+      letter-spacing: 0.03em;
+    }
+    .btn:hover { background: #e66a00; box-shadow: 0 0 14px 3px #f57c0055; transform: translateY(-2px) scale(1.03);}
+    .success-msg { display:none; color:green; margin-top:8px;}
+    /* Футер */
+    footer {
+      background: #222;
+      padding: 40px 0 18px 0;
+      text-align: center;
+      color: #fff;
+      border-top-left-radius: 32px;
+      border-top-right-radius: 32px;
+      margin-top: 35px;
+      box-shadow: 0 -2px 26px #1a2a350a;
+    }
+    footer div {
+      font-size: 16px;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+    footer a img { filter: invert(1) grayscale(1); transition: filter 0.15s;}
+    footer a:hover img { filter: invert(67%) sepia(98%) saturate(2108%) hue-rotate(359deg) brightness(106%) contrast(101%);}
+    /* Медиа-адаптация */
+    @media (max-width: 900px) {
+      section { padding: 25px 2vw 16px 2vw; }
+      .product-img { width: 98%; }
+      .form-box { max-width: 98%; }
+    }
+    @media (max-width: 650px) {
+      header, section { border-radius: 0; }
+      .form-box { border-radius: 12px;}
+      footer { border-radius: 0; }
+      h1 { font-size: 25px; }
+      h2 { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 data-key="mainTitle">Кровельные сэндвич‑панели</h1>
+    <div class="lang-switch">
+      <button onclick="setLang('ru')" id="btn-ru" class="active">Рус</button>
+      <button onclick="setLang('kg')" id="btn-kg">Kgz</button>
+      <button onclick="setLang('en')" id="btn-en">Eng</button>
+    </div>
+  </header>
+  <section>
+    <img src="images/roof.jpg" alt="Кровельные панели" class="product-img">
+    <h2 data-key="subtitle">Премиальные кровельные панели от БИАСТ</h2>
+    <div class="features" data-key="features">
+      <ul>
+        <li>3 вида утеплителя: пенопласт, ППУ/PIR, базальт</li>
+        <li>Толщина: 40–200 мм под заказ</li>
+        <li>Геометрическая точность, современный внешний вид</li>
+        <li>Быстрая доставка по Кыргызстану</li>
+        <li>Помощь в подборе, бесплатный расчет</li>
+        <li>Гарантия производителя — 10 лет</li>
+      </ul>
+    </div>
+    <div class="form-box">
+      <h3 data-key="formTitle">Оставьте заявку — получите бесплатную консультацию и расчет!</h3>
+      <form id="order-form-b24">
+        <select name="Утеплитель" required data-key="insulationSelect">
+          <option value="">Выберите утеплитель</option>
+          <option value="Пенопласт">Пенопласт</option>
+          <option value="Пенополиуретан (ППУ/PIR )">Пенополиуретан (ППУ/PIR )</option>
+          <option value="Базальт">Базальт</option>
+        </select>
+        <select name="Объём" required data-key="sizeSelect">
+          <option value="">Площадь объекта</option>
+          <option value="До 100 м²">До 100 м²</option>
+          <option value="До 500 м²">До 500 м²</option>
+          <option value="До 1000 м²">До 1000 м²</option>
+          <option value="Более 1000 м²">Более 1000 м²</option>
+        </select>
+        <select name="Город" required data-key="citySelect">
+          <option value="">Город</option>
+          <option value="Бишкек">Бишкек</option>
+          <option value="Ош">Ош</option>
+          <option value="Чуйская обл.">Чуйская обл.</option>
+          <option value="Нарынская обл.">Нарынская обл.</option>
+          <option value="Баткенская обл.">Баткенская обл.</option>
+          <option value="Иссык-Кульская обл.">Иссык-Кульская обл.</option>
+          <option value="Таласская обл.">Таласская обл.</option>
+          <option value="Джалал-Абадская обл.">Джалал-Абадская обл.</option>
+        </select>
+        <input type="text" name="name" placeholder="Ваше имя" required data-key="namePlaceholder">
+        <input type="tel" name="phone" placeholder="Телефон" required data-key="phonePlaceholder">
+        <textarea name="comment" placeholder="Комментарий (необязательно)" data-key="commentPlaceholder"></textarea>
+        <button type="submit" class="btn" data-key="submitBtn">Отправить</button>
+      </form>
+      <div id="form-success" class="success-msg" data-key="successMsg">Спасибо! Заявка отправлена.</div>
+    </div>
+  </section>
+  <footer>
+    <div style="margin-bottom: 20px;">
+      © 2025 БИАСТ сэндвич‑панелер борбору
+    </div>
+    <div>
+      <a href="https://instagram.com/biast.kg" target="_blank" style="margin: 0 8px;">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="28" style="vertical-align:middle;">
+      </a>
+      <a href="https://youtube.com/@biastkg" target="_blank" style="margin: 0 8px;">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" width="28" style="vertical-align:middle;">
+      </a>
+      <a href="https://facebook.com/biast.kg" target="_blank" style="margin: 0 8px;">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" width="28" style="vertical-align:middle;">
+      </a>
+    </div>
+  </footer>
+   <script>
+    const translations = {
+      ru: {
+        title: "Кровельные сэндвич‑панели | БИАСТ",
+        mainTitle: "Кровельные сэндвич‑панели",
+        subtitle: "Премиальные кровельные панели от БИАСТ",
+        features: `<ul>
+          <li>3 вида утеплителя: пенопласт, ППУ/PIR, базальт</li>
+          <li>Толщина: 40–200 мм под заказ</li>
+          <li>Геометрическая точность, современный внешний вид</li>
+          <li>Быстрая доставка по Кыргызстану</li>
+          <li>Помощь в подборе, бесплатный расчет</li>
+          <li>Гарантия производителя — 10 лет</li>
+        </ul>`,
+        formTitle: "Оставьте заявку — получите бесплатную консультацию и расчет!",
+        namePlaceholder: "Ваше имя",
+        phonePlaceholder: "Телефон",
+        commentPlaceholder: "Комментарий (необязательно)",
+        submitBtn: "Отправить",
+        successMsg: "Спасибо! Заявка отправлена.",
+        insulationSelect: [
+          "Выберите утеплитель",
+          "Пенопласт",
+          "Пенополиуретан (ППУ/PIR )",
+          "Базальт"
+        ],
+        sizeSelect: [
+          "Площадь объекта",
+          "До 100 м²",
+          "До 500 м²",
+          "До 1000 м²",
+          "Более 1000 м²"
+        ],
+        citySelect: [
+          "Город",
+          "Бишкек",
+          "Ош",
+          "Чуйская обл.",
+          "Нарынская обл.",
+          "Баткенская обл.",
+          "Иссык-Кульская обл.",
+          "Таласская обл.",
+          "Джалал-Абадская обл."
+        ]
+      },
+      kg: {
+        title: "Чатыр сэндвич панелдери | БИАСТ",
+        mainTitle: "Чатыр сэндвич панелдери",
+        subtitle: "БИАСТтан премиум чатыр панелдери",
+        features: `<ul>
+          <li>3 түрү: пенопласт, ППУ/PIR, базальт</li>
+          <li>Калыңдыгы: 40–200 мм (тапшырык менен)</li>
+          <li>Так геометрия, заманбап көрүнүш</li>
+          <li>Кыргызстан боюнча жеткирүү</li>
+          <li>Тандоого жардам, акысыз эсептөө</li>
+          <li>10 жылдык кепилдик</li>
+        </ul>`,
+        formTitle: "Өтүнүч калтырыңыз — акысыз кеңеш жана эсептөө алыңыз!",
+        namePlaceholder: "Атыңыз",
+        phonePlaceholder: "Телефон",
+        commentPlaceholder: "Комментарий (милдеттүү эмес)",
+        submitBtn: "Жөнөтүү",
+        successMsg: "Рахмат! Өтүнүчүңүз жөнөтүлдү.",
+        insulationSelect: [
+          "Жылуулоону тандаңыз",
+          "Пенопласт",
+          "Пенополиуретан (ППУ/PIR )",
+          "Базальт"
+        ],
+        sizeSelect: [
+          "Объекттин аянты",
+          "100 м² чейин",
+          "500 м² чейин",
+          "1000 м² чейин",
+          "1000 м² жогору"
+        ],
+        citySelect: [
+          "Шаар",
+          "Бишкек",
+          "Ош",
+          "Чүй обл.",
+          "Нарын обл.",
+          "Баткен обл.",
+          "Ысык-Көл обл.",
+          "Талас обл.",
+          "Жалал-Абад обл."
+        ]
+      },
+      en: {
+        title: "Roof Sandwich Panels | BIAST",
+        mainTitle: "Roof Sandwich Panels",
+        subtitle: "Premium Roof Panels from BIAST",
+        features: `<ul>
+          <li>3 types of insulation: foam, PU/PIR, basalt</li>
+          <li>Thickness: 40–200 mm to order</li>
+          <li>Geometric precision, modern look</li>
+          <li>Fast delivery across Kyrgyzstan</li>
+          <li>Selection help, free calculation</li>
+          <li>10-year manufacturer warranty</li>
+        </ul>`,
+        formTitle: "Leave a request — get a free consultation and quote!",
+        namePlaceholder: "Your name",
+        phonePlaceholder: "Phone",
+        commentPlaceholder: "Comment (optional)",
+        submitBtn: "Send",
+        successMsg: "Thank you! Request sent.",
+        insulationSelect: [
+          "Select insulation",
+          "Foam",
+          "Polyurethane (PU/PIR)",
+          "Basalt"
+        ],
+        sizeSelect: [
+          "Object area",
+          "Up to 100 m²",
+          "Up to 500 m²",
+          "Up to 1000 m²",
+          "Over 1000 m²"
+        ],
+        citySelect: [
+          "City",
+          "Bishkek",
+          "Osh",
+          "Chuy region",
+          "Naryn region",
+          "Batken region",
+          "Issyk-Kul region",
+          "Talas region",
+          "Jalal-Abad region"
+        ]
+      }
+    };
+
+    function setLang(lang) {
+      // Active button
+      document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('btn-' + lang).classList.add('active');
+      // Title
+      document.title = translations[lang].title;
+      // data-key replacements (text and html)
+      document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        if (translations[lang][key]) {
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            el.setAttribute('placeholder', translations[lang][key]);
+          } else if (key === 'features') {
+            el.innerHTML = translations[lang][key];
+          } else {
+            el.innerText = translations[lang][key];
+          }
+        }
+      });
+      // Селекты
+      setSelect('insulationSelect', translations[lang].insulationSelect);
+      setSelect('sizeSelect', translations[lang].sizeSelect);
+      setSelect('citySelect', translations[lang].citySelect);
+    }
+    function setSelect(dataKey, arr) {
+      let sel = document.querySelector('select[data-key="'+dataKey+'"]');
+      if (!sel) return;
+      sel.innerHTML = '';
+      arr.forEach(val => {
+        let opt = document.createElement('option');
+        opt.value = val;
+        opt.textContent = val;
+        sel.appendChild(opt);
+      });
+    }
+    // Автоустановка языка при загрузке
+    document.addEventListener('DOMContentLoaded', function () {
+      setLang('ru');
+    });
+
+    // Bitrix24 отправка (можно не менять)
+    document.addEventListener('DOMContentLoaded', function () {
+      var b24form = document.getElementById('order-form-b24');
+      if (b24form) {
+        b24form.addEventListener('submit', function(e){
+          e.preventDefault();
+          const form = e.target;
+          const data = {
+            fields: {
+              TITLE: 'Заявка с сайта (кровельные панели)',
+              NAME: form.name.value,
+              PHONE: [{VALUE: form.phone.value, VALUE_TYPE: 'WORK'}],
+              UF_CRM_1752660446: form['Город'].value,
+              UF_CRM_1752660588: form['Объём'].value,
+              UF_CRM_1752941020: form['Утеплитель'].value,
+              UF_CRM_1752940501: "Кровельные панели",
+              COMMENTS: form.comment.value
+            }
+          };
+          fetch('https://biastkg.bitrix24.ru/rest/84457/oxquoealy5gxt5bx/crm.lead.add.json', {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify(data)
+          }).then(res=>res.json())
+            .then(json=>{
+              if(json.result) {
+                form.style.display = 'none';
+                document.getElementById('form-success').style.display = 'block';
+              } else {
+                alert('Ошибка отправки: ' + (json.error_description||''));
+              }
+            });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
